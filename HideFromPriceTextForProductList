@@ -1,0 +1,24 @@
+<script type="text/javascript">
+// Hide from price text for product list items
+$(window).load (function () {
+
+    // HideFromPriceTextForProductList
+
+		var sheets = document.styleSheets; // returns an Array-like StyleSheetList
+
+    // look specifically to secons style sheet , else loop over sheets
+  	console.log('sheets[1].cssRules.length',sheets[1].cssRules.length)   
+  
+       for(var i=0; i<sheets[1].cssRules.length; i++) {
+          var sheet = sheets[1].cssRules[i];
+          
+          if (sheet.selectorText == '.productGridPriceFrom') {
+            // loop over 
+              console.log('sheet.style',sheet.style)
+              sheet.style.display = 'none';
+            }
+        }
+      
+  }    
+});
+</script>
